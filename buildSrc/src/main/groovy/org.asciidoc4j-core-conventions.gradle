@@ -1,0 +1,26 @@
+plugins {
+	id "java"
+}
+
+ext {
+	junitVersion = "5.11.0"
+	logbackClassicVersion = "1.5.7"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	jcenter()
+    mavenCentral()
+}
+
+dependencies {
+	testImplementation platform ("org.junit:junit-bom:${junitVersion}")
+	testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+}
+
+tasks.named('test') {
+    // Use junit platform for unit tests.
+    useJUnitPlatform()
+}
