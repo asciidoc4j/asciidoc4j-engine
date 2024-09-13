@@ -3,12 +3,11 @@ plugins {
 }
 
 ext {
-	junitVersion = "5.11.0"
-	logbackClassicVersion = "1.5.7"
+	slf4jApiVersion = "2.0.16"	
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 21
+targetCompatibility = 21
 
 repositories {
 	jcenter()
@@ -16,11 +15,5 @@ repositories {
 }
 
 dependencies {
-	testImplementation platform ("org.junit:junit-bom:${junitVersion}")
-	testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
-}
-
-tasks.named('test') {
-    // Use junit platform for unit tests.
-    useJUnitPlatform()
+	implementation "org.slf4j:slf4j-api:${slf4jApiVersion}"
 }

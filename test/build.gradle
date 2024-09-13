@@ -1,0 +1,9 @@
+plugins {
+	id "org.asciidoc4j-test-conventions"
+}
+
+description = "Test module"
+
+dependencies {
+	testImplementation (project(":core"))
+}

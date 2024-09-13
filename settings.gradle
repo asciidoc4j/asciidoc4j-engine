@@ -1,3 +1,4 @@
 rootProject.name = "asciidoc4j-engine"
 
 include ":core"
+include ":test"
